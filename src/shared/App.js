@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, About, Posts, Users  } from 'pages';
+import { Home, About, Posts, Users, Lambda  } from 'pages';
 import { Helmet } from "react-helmet";
 import Menu from 'components/Menu';
 
@@ -39,6 +39,7 @@ class App extends Component {
                     <Route path="/about" component={About}/>
                 </Switch>
                 <Route path="/users" component={Users}/>
+                <Route path="/lambda" component={Lambda}/>
             </div>
         );
     }

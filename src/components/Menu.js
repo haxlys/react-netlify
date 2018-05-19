@@ -15,6 +15,7 @@ const Menu = () => {
                 <li><NavLink to="/about/foo" activeStyle={activeStyle}>About Foo</NavLink></li>
                 <li><NavLink to="/posts" activeStyle={activeStyle}>Posts</NavLink></li>
                 <li><NavLink to="/users" activeStyle={activeStyle}>Users</NavLink></li>
+                <li><NavLink to="/lambda" activeStyle={activeStyle}>Lambda</NavLink></li>
             </ul>
             <hr/>
         </div>
