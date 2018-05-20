@@ -5,4 +5,5 @@ export const About = asyncRoute(() => import('./About'));
 export const Post = asyncRoute(() => import('./Post'));
 export const Posts = asyncRoute(() => import('./Posts'));
 export const Users = asyncRoute(() => import('./Users'));
-export const Lambda = asyncRoute(() => import('./Lambda'));
+export const Projects = asyncRoute(() => import('./Projects'));
+export const Aside = asyncRoute(() => import('./Aside'));

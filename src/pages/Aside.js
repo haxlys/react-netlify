@@ -1,88 +1,88 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom';
+
 import meImg from 'images/me.jpg'
 
 export default class Aside extends Component {
-  render() {
-    return (
-      <aside class="site-sidebar">
-        <div class="site-sidebar-bg"></div>
+  state = {
+    menu: false,
+    sticky: false,
+  }
 
-        <div class="site-sidebar-inner">
-        <a href="/" class="person">
-          <div class="person-avatar">
-            <img src={meImg} alt="HeeBangPicture" class="avatar"/>
+  menuClick () {
+    this.setState({menu: !this.state.menu});
+  }
+
+
+  stickyClick (isSticky) {
+    this.setState({sticky: isSticky});
+  }
+
+  render() {
+    const { menu, sticky } = this.state;
+    const extended = menu ? 'extended' : '';
+    const stickyClass = sticky ? 'sticky' : '';
+    const activeStyle = {
+      color: 'white',
+      fontWeight: 'bold'
+    };
+
+    return (
+      <aside className="site-sidebar">
+        <div className="site-sidebar-bg"></div>
+
+        <div className="site-sidebar-inner">
+        <NavLink exact to="/" className="person">
+        <a className="person">
+          <div className="person-avatar">
+            <img src={meImg} alt="HeeBangPicture" className="avatar"/>
           </div>
-          <div class="person-content">
-            <h1 class="person-title">방희배</h1>
-            <h2 class="person-subtitle">풀 스택 웹 개발자</h2>
+          <div className="person-content">
+            <h1 className="person-title">방희배</h1>
+            <h2 className="person-subtitle">풀 스택 웹 개발자</h2>
           </div>
         </a>
+        </NavLink >
 
-        <nav class="block main-navigation">
-          <div class="navigation-extend-bar">
-            <div class="social-icons">
-              <a href="mailto:jacek@jtom.me" class="button button-icon" title="mail: jacek@jtom.me">
-                <i class="fa fa-envelope"></i>
+        <nav className={`block main-navigation ${extended}`} id="myHeader">
+          <div className={`navigation-extend-bar ${stickyClass}`}>
+            <div className="social-icons">
+              <a href="mailto:mirstock@naver.com" className="button button-icon" title="mail: mirstock@naver.com">
+                <i className="fa fa-envelope"></i>
               </a>
 
-              <a href="https://facebook.com/jtomaszewski" class="button button-icon" title="facebook: jtomaszewski">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-
-              <a href="https://twitter.com/jtompl" class="button button-icon" title="twitter: @jtompl">
-                <i class="fa fa-twitter-square"></i>
-              </a>
-
-              <a href="https://github.com/jtomaszewski" class="button button-icon" title="github: jtomaszewski">
-                <i class="fa fa-github-square"></i>
-              </a>
-
-              <a href="https://www.linkedin.com/in/jtompl" class="button button-icon" title="linkedin: jtompl">
-                <i class="fa fa-linkedin-square"></i>
+              <a href="https://www.facebook.com/profile.php?id=100005415841072" className="button button-icon" title="facebook: jtomaszewski">
+                <i className="fa fa-facebook-square"></i>
               </a>
             </div>
 
-            <a href="#" class="navigation-extend-button js-extend-main-navigation">
-              <i class="fa fa-bars"></i>
+            <a className={`navigation-extend-button js-extend-main-navigation`}>
+              <i className='fa fa-bars' onClick={this.menuClick.bind(this)}></i>
             </a>
           </div>
 
-          <div class="navigation-extendable">
+          < div className = {`navigation-extendable ${stickyClass}`} >
             <ul>
-              <li class="current"><a href="/skills-and-offer/">My skills &amp; offer</a></li>
-              <li class=""><a href="/portfolio/">Portfolio</a></li>
-              <li class=""><a href="/contact/">Contact</a></li>
+              <li><NavLink exact to="/skill" activeStyle={activeStyle}>My Skills</NavLink></li>
+              <li><NavLink exact to="/projects" activeStyle={activeStyle}>Projects</NavLink></li>
             </ul>
             <ul>
-              <li class=""><a href="/about-me/">About me</a></li>
-              <li><a href="http://jackthenomad.com/" target="_blank">Personal blog</a></li>
-              <li class=""><a href="/talks/">My talks</a></li>
+              <li><NavLink exact to="/about" activeStyle={activeStyle}>About me</NavLink></li>
+              <li><a href="http://tbang.tistory.com/" target="_blank">Personal blog</a></li>
             </ul>
           </div>
         </nav>
 
-        <div class="block block-social">
-          <div class="block-title">Get in touch</div>
-          <div class="block-content">
-            <div class="social-icons">
-              <a href="mailto:jacek@jtom.me" class="button button-icon" title="mail: jacek@jtom.me">
-                <i class="fa fa-envelope"></i>
+        <div className="block block-social">
+          <div className="block-title">Get in touch</div>
+          <div className="block-content">
+            <div className="social-icons">
+              <a href="mailto:mirstock@naver.com" className="button button-icon" title="mail: mirstock@naver.com">
+                <i className="fa fa-envelope"></i>
               </a>
 
-              <a href="https://facebook.com/jtomaszewski" class="button button-icon" title="facebook: jtomaszewski">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-
-              <a href="https://twitter.com/jtompl" class="button button-icon" title="twitter: @jtompl">
-                <i class="fa fa-twitter-square"></i>
-              </a>
-
-              <a href="https://github.com/jtomaszewski" class="button button-icon" title="github: jtomaszewski">
-                <i class="fa fa-github-square"></i>
-              </a>
-
-              <a href="https://www.linkedin.com/in/jtompl" class="button button-icon" title="linkedin: jtompl">
-                <i class="fa fa-linkedin-square"></i>
+              <a href="https://www.facebook.com/profile.php?id=100005415841072" className="button button-icon" title="facebook: jtomaszewski">
+                <i className="fa fa-facebook-square"></i>
               </a>
             </div>
           </div>
@@ -90,5 +90,18 @@ export default class Aside extends Component {
       </div>
     </aside>
     )
+  }
+
+  componentDidMount() {
+    window.onscroll = function () {
+      (() => {
+        if (window.pageYOffset >= 300) {
+          this.stickyClick(true)
+        } else {
+          this.stickyClick(false)
+        }
+      })()
+    }.bind(this);
+
   }
 }

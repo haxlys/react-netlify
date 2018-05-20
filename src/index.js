@@ -4,6 +4,7 @@ import Root from './client/Root';
 import registerServiceWorker from './registerServiceWorker';
 import { AppContainer } from 'react-hot-loader';
 import './index.css';
+import './parallax.css';
 
 const render = Component => {
   ReactDOM.render(

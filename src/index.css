@@ -33,6 +33,8 @@
   src: local('Roboto Medium'), local('Roboto-Medium'), url(http://fonts.gstatic.com/s/roboto/v18/RxZJdnzeo3R5zSexge8UUaCWcynf_cDxXwCLxiixG1c.ttf) format('truetype')
 }
 
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -51,6 +53,7 @@
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
+  cursor: pointer;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale
 }
@@ -2214,7 +2217,7 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 html {
-  font-family: sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%
 }
@@ -2629,61 +2632,73 @@ th {
 .tech-icon-angular {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) no-repeat */
 }
 
 .tech-icon-chef {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -35px 0 no-repeat */
 }
 
 .tech-icon-cordova {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -70px 0 no-repeat */
 }
 
 .tech-icon-doctrine {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -105px 0 no-repeat */
 }
 
 .tech-icon-elasticsearch {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -140px 0 no-repeat */
 }
 
 .tech-icon-ionic {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -175px 0 no-repeat */
 }
 
 .tech-icon-php {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -210px 0 no-repeat */
 }
 
 .tech-icon-rails {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -245px 0 no-repeat */
 }
 
 .tech-icon-redis {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -280px 0 no-repeat */
 }
 
 .tech-icon-symfony {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -315px 0 no-repeat */
 }
 
 .tech-icon-websockets {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -350px 0 no-repeat */
 }
 
 .tech-icon-wordpress {
   width: 35px;
   height: 32px;
+  /* background: url(../images/tech-icons.20d55c5f.png) -385px 0 no-repeat */
 }
 
 html {
@@ -2998,6 +3013,7 @@ body {
     right: -50px;
     content: " ";
     display: block;
+    /* background: url(../images/home-background.b33eba93.png) right top no-repeat #bababa; */
     background-size: cover;
     width: auto;
     height: 850px
@@ -3009,7 +3025,7 @@ body {
 
 .site-sidebar .site-sidebar-bg {
   background-color: #910d0d;
-  background-color: rgba(145, 13, 13, .8);
+  background-color: rgb(73, 129, 224);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3159,6 +3175,12 @@ body {
   .main-navigation .navigation-extend-bar {
     display: block
   }
+  .main-navigation .navigation-extend-bar.sticky {
+    position: fixed;
+    width: 100%;
+    background: #4981e0;
+    top: 0;
+  }
 }
 
 .main-navigation .navigation-extend-bar a {
@@ -3214,7 +3236,7 @@ body {
 }
 
 @media (min-width:1024px) {
-  .main-navigation ul li.current:after {
+  /* .main-navigation ul li.current:after {
     content: " ";
     display: block;
     position: absolute;
@@ -3226,7 +3248,7 @@ body {
     bottom: 6px;
     left: auto;
     right: 0
-  }
+  } */
 }
 
 .main-navigation a {
@@ -3253,10 +3275,17 @@ body {
 @media (max-width:1023px) {
   .main-navigation .navigation-extendable {
     height: 0;
-    transition: height .5s
+    transition: height .5s;
   }
   .main-navigation.extended .navigation-extendable {
     height: 300px
+  }
+  .main-navigation.extended .navigation-extendable.sticky {
+    transition: height .5s;
+    position: fixed;
+    width: 100%;
+    background: #4981e0;
+    top: 50px;
   }
 }
 
@@ -3279,6 +3308,7 @@ body {
   content: " ";
   display: block;
   width: 25%;
+  /* background: url(../images/home-background.b33eba93.png) top center no-repeat #bababa; */
   background-size: cover
 }
 
@@ -3525,6 +3555,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1;
+  /* background: url(../images/home-background.b33eba93.png) top center no-repeat #bababa; */
   background-size: cover;
   -webkit-font-smoothing: antialiased;
   color: #fff;
@@ -4228,4 +4259,9 @@ body.cv {
   font-size: 18px;
   color: #333;
   line-height: 1.3
+}
+
+.sec-contents {
+  margin: 10px;
+  text-align: justify;
 }
