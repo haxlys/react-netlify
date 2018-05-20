@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, About, Posts, Users, Lambda  } from 'pages';
+import { Home, About, Posts, Users, Lambda, Aside  } from 'pages';
 import { Helmet } from "react-helmet";
 import Menu from 'components/Menu';
 
@@ -29,6 +29,7 @@ class App extends Component {
                 <Helmet>
                     <title>React Router & SSR</title>
                 </Helmet>
+                <Aside/>
                 <Menu/>
                 { SplitMe && <SplitMe/> /* SplitMe 가 유효하면 렌더링을 해줍니다 */}
                 <button onClick={this.showSplitMe}>ClickMe</button>
