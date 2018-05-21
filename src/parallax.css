@@ -15,6 +15,7 @@ html {
 @media (max-width:1023px) {
   .home-con {
     left: 0%;
+    width: 100%;
   }
 }
 
